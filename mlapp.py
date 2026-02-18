@@ -27,7 +27,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<div class="title">MATERNAL HEALTH RISK ASSESSMENT</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">MATERNAL HEALTH PREDICTOR</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Instant pregnancy health evaluation</div>', unsafe_allow_html=True)
 
 try:
@@ -82,3 +82,4 @@ if submitted:
 
 
 st.markdown('<div class="footer">Note: This tool provides preliminary assessment only</div>', unsafe_allow_html=True)  
+
