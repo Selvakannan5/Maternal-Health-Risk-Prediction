@@ -60,9 +60,9 @@ if submitted:
                             columns=['Age', 'SystolicBP', 'DiastolicBP', 'BS', 'BodyTemp', 'HeartRate'])
     prediction = model.predict(input_data)[0]
     risk_levels = {
-        0: {"name": "LOW RISK", "class": "low-risk", "icon": "✅", "rec_class": "recommendation-low"},
-        1: {"name": "MEDIUM RISK", "class": "medium-risk", "icon": "⚠️", "rec_class": "recommendation-medium"},
-        2: {"name": "HIGH RISK", "class": "high-risk", "icon": "🚨", "rec_class": "recommendation-high"}
+        0: {"name": "MIN RISK", "class": "min-risk", "icon": "✅", "rec_class": "recommendation-min"},
+        1: {"name": "MID RISK", "class": "mid-risk", "icon": "⚠️", "rec_class": "recommendation-mid"},
+        2: {"name": "MAX RISK", "class": "max-risk", "icon": "🚨", "rec_class": "recommendation-max"}
     }
     risk = risk_levels[prediction]
     st.markdown(f'<div class="result-box {risk["class"]}"><h2>{risk["icon"]} {risk["name"]}</h2></div>', unsafe_allow_html=True)
@@ -79,5 +79,6 @@ if submitted:
         st.markdown(f'<div class="recommendation {risk["rec_class"]}"><span class="rec-icon high-risk-icon">🚨</span><span style="color: #b71c1c !important; font-weight: 700 !important;">SEEK IMMEDIATE MEDICAL ATTENTION</span></div>', unsafe_allow_html=True)
         st.markdown(f'<div class="recommendation {risk["rec_class"]}"><span class="rec-icon high-risk-icon">🏥</span><span style="color: #b71c1c !important;">Prepare for hospitalization</span></div>', unsafe_allow_html=True)
         st.markdown(f'<div class="recommendation {risk["rec_class"]}"><span class="rec-icon high-risk-icon">📞</span><span style="color: #b71c1c !important;">Have emergency contacts ready</span></div>', unsafe_allow_html=True)
+
 
 st.markdown('<div class="footer">Note: This tool provides preliminary assessment only</div>', unsafe_allow_html=True)  
